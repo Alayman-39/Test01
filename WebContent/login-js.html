@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>天天生鲜-登陆</title>
+<link rel="icon" href="images/yclogo.png">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+	<div class="login_top">
+    	<a href="index.html" class="login_logo"><img src="images/logo02.png"></a>
+    </div>
+    <div class="login_form_bg">
+    	<div class="login_form_wrap clearfix">
+        	<div class="login_banner fl"></div>
+            <div class="slogan fl">日夜兼程 · 极速送达</div>	
+            <div class="login_form fr">
+                <div class="login_title	clearfix">
+                    <h1 class="fl">用户登陆</h1>
+                    <a href="register.html" class="fl">立即注册</a>
+                </div>
+                <div class="form_input clearfix">
+                    <form>
+						<ul>
+                            <li>
+                                <input type="text" name="username" class="name_input" placeholder="请输入用户名" id="nickname">
+                                <div class="user_error">输入错误</div>
+                            </li>
+                            <li>
+                                <input type="password" name="pwd" class="pass_input" placeholder="请输入密码" id="pwd">
+                                <div class="pwd_error">输入错误</div>
+                            </li>
+                            <li>
+                            	<div>
+                                <input type="text" name="yzm" id="yzm" class="yzm_input"
+                                placeholder="请输入验证码">
+                                <img class="code" src="images/yzm.png">
+                                </div>
+                                    <!--<img id="code" src="http://localhost:8080/Fresh/VerifyCodeServlet">
+                                    <img id="image" src="code/getCode" title="验证码图" onclick="refresh(this)"  style="margin-left:75px" />
+                                    -->
+
+                                <div class="pwd_error">验证码错误</div>
+                            </li>
+                            <li>
+                            <div class="more_input clearfix">
+                                <input type="checkbox" name="" id="remember">
+                                <label for="remember">记住用户名</label>
+                                <a href="#">忘记密码</a>
+                            </div>
+                        </li>
+                            <li>
+                                <input type="botton" name="" value="登录"  class="input_submit" id="login" >
+                            </li>
+                      	</ul>
+                    </form>
+                </div>
+            </div>
+         </div>
+    </div>
+    <div class="footer">
+    	<div class="foot_link">
+        	<a href="#">关于我们</a><span> | </span>
+        	<a href="#">联系我们</a><span> | </span>
+        	<a href="#">招聘广告</a><span> | </span>
+            <a href="#">友情链接</a>
+        </div>
+        <p>CopyRight © 2019 衡阳市源辰信息科技有限公司 All Rights Reserverd</p>
+        <p>电话：0734-8355998 湘ICP备16015987号</p>
+    </div>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script>
+		//切换验证码
+		function refresh(obj){
+			obj.src="code/getCode?"+Math.random();
+		}
+	
+		//登陆操作
+		$("#login .login_button").click(function(){
+		
+		
+			var value = $("input[name='utype']:checked").val();
+			var uname = $("input[name='uname']").val();
+			var upwd = $("input[name='upwd']").val();
+			var code = $("input[name='code']").val();
+			
+			$.post("users/UserLogin/"+value+"-"+uname+"-"+upwd+"-"+code,function(data){
+				if(data=="1"){
+					alert("恭喜，登录成功！！！");
+					window.location.href = "back/index.html?type="+value+"&uname="+uname;;
+				}else if(data=="0"){
+					window.location.href = "login.html";			
+				}else{
+					alert("登录失败,验证码输入有误");
+				}
+				
+			});
+		});
+		
+		
+		//登陆操作
+		$("#login").click(function(){
+			var  uname = $("#nickname").val();
+			var pwd = $("#pwd").val();
+			console.log(uname+"--"+pwd);
+			if( uname == "yc" && pwd == "a" ){
+				location.href = "index.html";	
+			}else{
+				alert("登陆失败");
+				location.href = "login.html";	
+			}
+		});
+		
+		
+		
+		/*
+		  $.ajax({  
+			url:"/goods/UserServlet",//要请求的servlet  
+			data:{method:"ajaxValidateVerifyCode", verifyCode:value},//给服务器的参数  
+			type:"POST",  
+			dataType:"json",  
+			async:false,//是否异步请求，如果是异步，那么不会等服务器返回，我们这个函数就向下运行了。  
+			cache:false,  
+			success:function(data) {  
+				if(!data) {//如果校验失败  
+					alert("登陆失败");
+				}  
+			}  
+		}); 
+		
+		
+		//监听回车键提交
+		$(function(){
+			document.onkeydown=keyDownSearch;
+			function keyDownSearch(e) {
+				// 兼容FF和IE和Opera
+				var theEvent = e || window.event;
+				var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+				if (code == 13) {
+					$('#submit').click();//具体处理函数
+					return false;
+				}
+				return true;
+			}
+		});
+
+	</script>
+	
+	<script type="text/javascript">
+     $(document).ready(function() {
+       var newVisitor = isNewVisitor();// 如果是新访客
+       if(newVisitor === true)
+       {
+       // 动画弹出消息框
+       alert('您是新用户！');
+
+       // 标记：已经向该访客弹出过消息。30天之内不要再弹
+       setCookie("gznotes-visited","true", 5);
+       }
+     });
+
+     function isNewVisitor() {
+     // 从cookie读取“已经向访客提示过消息”的标志位
+       var flg = getCookie("gznotes-visited");
+        if (flg === "") {
+        return true;
+        } else {
+         return false;
+        }
+     }
+   // 写字段到cookie
+     function setCookie(cname, cvalue, exdays) {
+       var d = new Date();
+       d.setTime(d.getTime() + (exdays*24*60*60*1000));
+       var expires = "expires="+d.toUTCString();
+       document.cookie = cname + "=" + cvalue + "; " + expires +";path=/";
+     } 
+     // 读cookie
+     function getCookie(cname) {
+       var name = cname + "=";
+       var ca = document.cookie.split(';');
+       for(var i=0; i<ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0)==' ') c = c.substring(1);
+          if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+        }
+        return "";
+     }
+   </script>
+   */
+</body>
+</html>

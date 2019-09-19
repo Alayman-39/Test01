@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>天天生鲜-登录</title>
+<link rel="short icon" href="images/logo.png">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+	<!-- logo区区域 -->
+	<div class="login_top">
+    	<a href="#" class="login_logo"><img  src="images/logo02.png"></a>
+    </div>
+    
+	<!-- 内容区域 -->
+	<div class="login_form_bg">
+    	<div class="login_form_wrap clearfix">
+        	<div class="login_banner fl"></div>
+        	<div class="slogn fl">日夜兼程 ·  急速送达</div>
+        	<div class="login_form fr"> 
+                <div class="login_title clearfix">
+                    <h1 class="fl">用户登录</h1>
+                    <a href="register.html" class="fl">立即注册</a>
+                </div>
+				<!-- 登录区域 -->
+                <div class="form_input claerfix">
+                    <form method="post" action="member.action" >
+                    	<input type="hidden" name="op" value="login"/>
+                        <ul>
+                            <li>
+                                <input type="text" name="nickname" class="name_input"   placeholder="请输入您的用户名或手机号">
+                            </li>
+                            <li>
+                                <input type="password" name="pwd" class="pwd_input"  placeholder="请输入您的密码">
+                            </li>
+                            <li>
+                                <input type="text" name="yzm" class="yzm_input" placeholder="请输入您的验证码">
+                                <img src="images/yzm.png" class="code">
+                            </li>
+                            <li>
+                                <div class="more_input ">
+                                    <input type="checkbox" name="">
+                                    <label>记住用户名</label>
+                                    <a href="" class="fr">忘记密码</a>
+                                </div>
+                            </li>
+                            <li>
+                                <input id="memberLogin" type="submit" value="登录"  class="input_submit">
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+	<!-- 版权所有-->
+	<div class="footer">
+    	<div class="foot_link">
+        	<a href="#">关于我们</a> <span> | </span>
+            <a href="#">联系我们</a> <span> | </span>
+            <a href="#">招聘广告</a> <span> | </span>
+            <a href="#">友情链接</a>
+        </div>
+    	<p>CopyRight &copy; 2019 衡阳市源辰信息科技有限公司 All Rights Reserverd</p>
+        <p>电话：0734-8355998 湘ICP备16015987号</p>
+    </div>
+<script type="text/javascript" src="js/jquery.min.js"></script>	
+<script type="text/javascript">
+$('#memberLogin').click(function(){
+	var username=$('input[name="nickname"]').val();
+	var pwd=$('input[name="pwd"]').val();
+	/* if(name!="member" || pwd!="member"){
+		$.message.alert('错误',"用户名或密码不正确！请重新输入");
+		return ;
+	} */
+	window.location.href="index.html";
+	//var regEmail=/^\w+@[a-zA-Z0-9]{2,10}(?:\.[a-z]{2,4}){1,3}$/;
+	//var regTel=/^1[3-9]\d{9}$/;
+	//var regName=/^\w{2,8}$/;
+	if(regName.test(name)){
+		$.post('member.action',{op:'login',nickname:name,pwd:pwd},function(data){
+			if(1==data){
+				window.location.href='index.html';
+			}
+		});
+	}else if(regEmail.test(name)){
+		$.post('member.action',{op:'login',nickname:name,pwd:pwd},function(data){
+			if(1==data){
+				window.location.href='index.html';
+			}
+		});
+	}else if(regTel.test(name)){
+		$.post('member.action',{op:'login',nickname:name,pwd:pwd},function(data){
+			if(1==data){
+				window.location.href='index.html';
+			}
+		});
+	} 
+});
+</script>
+</body>
+</html>
+

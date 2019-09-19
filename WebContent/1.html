@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta  http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<a href="javascript:void(0)" onclick="qqShare('https://www.douyu.com','斗鱼直播','斗鱼',null,'/pic/01.jpg')">qq分享</a>
+</body>
+
+<script type="text/javascript">
+/**
+ * qq分享
+ * @param url       链接地址 你需要分享的网站 如：www.baidu.com
+ * @param desc      描述
+ * @param title     标题
+ * @param summary   内容
+ * @param pics      图片
+ */
+function qqShare(url,title,summary,pics){
+    var urlPath = "https://connect.qq.com/widget/shareqq/index.html?url="+ encodeURI(url) +
+                  "&desc=&title=" + title +
+                  "&summary=" + summary +
+                  "&pics=" + pics;
+    window.open (urlPath, 'qq分享', 'height=637, width=1053, top=195,left=459, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no')
+}
+</script>
+</html>
+--------------------- 

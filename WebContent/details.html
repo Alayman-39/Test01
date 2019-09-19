@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>天天生鲜-商品详情</title>
+<link rel="short icon" href="images/logo.png">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/details.css">
+<script src="js/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+	<!-- 头部  -->
+	<div class="header_con">
+    	<div class="header">
+    		<div class="welcome fl">欢迎来到天天生鲜</div>
+    		<div class="fr">
+            	<div class="login_info fl">
+                	欢迎：<em>y c</em>
+                </div>
+                <div class="login_btn fl">
+                	<a href="login.html">登录</a>
+                    <span> | </span>
+                    <a href="register.html">注册</a>
+                </div>
+            	 <div class="user_link fl">
+                    <span> | </span>
+                    <a href="user.html">用户中心</a>
+                    <span> | </span>
+                    <a href="cart-js.html">我的购物车</a>
+                    <span> | </span>
+                    <a href="order.html">我的订单</a>
+           		 </div> 
+             </div>  
+    	</div>
+    </div>
+    
+     <!-- 搜素框 -->
+     <div class="search_bar clearfix">
+        <a href="index.html" class="logo fl"><img src="images/logo.png"></a>
+        <div class="search_con fl">
+            <input type="text" placeholder="搜素商品" name="" class="input_text fl">
+            <input type="button" value="搜索" class="input_btn fr">
+        </div>
+        <div class="guest_cart fr">
+            <a href="cart-js.html" class="cart_name fl">我的购物车</a>
+            <div class="goods_count fl" id="show_count">1</div>
+        </div>
+     </div>
+     
+    <!-- 全部商品分类 --> 
+    <div class="navbar_con">
+    	<div class="navbar clearfix">
+        	<!-- 动态下拉框 -->
+    		<div class="subnav_con fl">
+            	<h1 class="fl">全商品分类</h1>
+            	<span></span>
+                <ul class="subnav">
+                    <li><a href="#model01" class="fruit">新鲜水果</a></li>
+                    <li><a href="#model02" class="sealfood">海鲜水产</a></li>
+                    <li><a href="#model03" class="meet">猪牛羊肉</a></li>
+                    <li><a href="#model04" class="egg">禽类蛋品</a></li>
+                    <li><a href="#model05" class="vegetables">新鲜蔬菜</a></li>
+                    <li><a href="#model06" class="ice">速冻食品</a></li>
+            	</ul>
+            </div>
+    		<ul class="navlist fl">
+    			<li><a href="index.html">首页</a></li>
+                <li class="interval">|</li>
+                <li><a href="">手机生鲜</a></li>
+                <li class="interval">|</li>
+                <li><a href="">抽奖</a></li>
+    		</ul>
+    	</div>
+    </div>
+     
+    <!-- 面包屑导航 --> 
+    <div class="breadcrumb" id="breadcrumb">
+     	<a href="javascript:void(0)">全部分类</a>
+        <span>&gt;</span>
+        <a href="javascript:void(0)">新鲜水果</a>
+        <span>&gt;</span>
+        <a href="javascript:void(0)">商品详情</a>
+     </div>
+     
+    <!-- 商品展示 -->
+    <div class="goods_details_con clearfix">
+    	 <div class="goods_details_pic fl"></div> 
+    	<div class="goods_details_list fr"></div>
+    </div>
+    
+    <!-- 商品详情 -->
+    <div class="main_wrap clearfix">
+		<div class="l_wrap fl clearfix">
+			<div class="new_goods">
+				<h3>新品推荐</h3>
+				<ul>
+					<li>
+						<a href="#"><img src="images/goods/goods001.jpg"></a>
+						<h4><a href="#">进口柠檬</a></h4>
+						<div class="prize">￥3.90</div>
+					</li>
+					<li>
+						<a href="#"><img src="images/goods/goods002.jpg"></a>
+						<h4><a href="#">玫瑰香葡萄</a></h4>
+						<div class="prize">￥16.80</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="r_wrap fr clearfix">
+			<ul class="detail_tab clearfix">
+				<li class="active">商品介绍</li>
+				<li>评论</li>
+                <li>推荐</li>
+			</ul>
+
+			<div class="tab_content">
+				<dl>
+					<dt>商品详情：</dt>
+					<dd>草莓采摘园位于北京大兴区 庞各庄镇四各庄村 ，每年1月-6月面向北京以及周围城市提供新鲜草莓采摘和精品礼盒装草莓，草莓品种多样丰富，个大香甜。所有草莓均严格按照有机标准培育，不使用任何化肥和农药。草莓在采摘期间免洗可以直接食用。欢迎喜欢草莓的市民前来采摘，也欢迎各大单位选购精品有机草莓礼盒，有机草莓礼盒是亲朋馈赠、福利送礼的最佳选择。 </dd>
+				</dl>
+			</div>
+
+		</div>
+	</div>
+    
+    <!-- 版权所有 -->
+    <div class="footer">
+    	<div class="foot_link">
+        	<a href="#">关于我们</a> <span> | </span>
+            <a href="#">联系我们</a> <span> | </span>
+            <a href="#">招聘广告</a> <span> | </span>
+            <a href="#">友情链接</a>
+        </div>
+    	<p>CopyRight &copy; 2019 衡阳市源辰信息科技有限公司 All Rights Reserverd</p>
+        <p>电话：0734-8355998 湘ICP备16015987号</p>
+    </div>
+    
+</body>
+	
+    <script type="text/javascript">
+    	//获取该页面的地址
+    	var href =  window.location.href;
+    	//获取商品编号
+    	var gid = href.substring(href.indexOf('=')+1);
+    	$.get('goodsinfo.action',{op:'findAll',gno:gid},function(data){
+    		showGoodDetail1(data[0]);
+    	},'json'); 
+		
+    	//商品展示
+    	 function showGoodDetail1(obj){
+    		str='<div class="goods_details_pic fl"><img src="/webapps/'+obj.pics+'"/></div>';
+    		$('.goods_details_pic').html(str);
+    		str1='<h3>'+obj.gname+'</h3><p>商品介绍:'+obj.intro+'</p><div class="price_bar">'
+    		+'<span class="show_price">￥<em>'+obj.price+'</em>元</span>'
+    		+'<span class="show_unit">单位：<em>'+obj.unit+'</em></span></div>'
+    		+'<div class="goods_num clearfix"><div class="num_name fl">数量：</div>'
+    		+'<div class="num_add fl"><a href="javascript:;"'
+    		+' class="add fr" onclick=add(this) >+</a><input type="text"'
+    		+' class="num_show fl" name="num"  value="1"><a href="javascript:;"'
+    		+' class="minus fr" onclick=reduce(this) >-</a></div></div>'
+    		+'<div class="total">总价：<em>'+obj.price+'</em>元</div><div class="operate_btn">'
+    		+'<a href="cart.html" class="buy_btn" id="buy_btn">立即购买</a>'
+    		+'<a href="javascript:addcart('+obj.gno+');" '
+    		+' class="add_cart" id="add_cart"  >加入购物车</a></div></div>';
+    		
+    		$('.goods_details_list').html(str1);
+    		$('.main_wrap .r_wrap .tab_content dd').html(obj.descr);
+    	}
+    	
+    	//增加商品数量
+    	function add(obj){
+    		var num = $(obj).next().val();
+   			num++;
+   			if(num>=100){
+   				alert('你他mua的不怕撑死嘛？');
+   			}
+   			//将数量写入标签
+   			$(obj).next().val(num);
+   			//获取单价
+   			var price = $(obj).parent().parent().prev().find('em').html();
+   			
+   			//获取总价
+   			var total = num*price;
+   			var $sumtotal = $(obj).parent().parent().next().find('em');
+   			$sumtotal.text(total.toFixed(2));
+    	}
+    	
+    	//减少商品数量
+    	function reduce(obj){
+    		var num = $(obj).prev().val();
+    		//判断商品数量是否大于1
+    		if(num<=1){
+    			return;
+    		}
+   			num--;
+   			//将数量写入标签
+   			$(obj).prev().val(num);
+   			//获取单价
+   			var price = $(obj).parent().parent().prev().find('em').html();
+   			
+   			//获取总价
+   			var total = num*price;
+   			var $sumtotal = $(obj).parent().parent().next().find('em');
+   			$sumtotal.text(total.toFixed(2));
+    	}
+    	
+    	function addcart(gno){
+    		var orprice=$('.total').find('em').html();
+    		var num = $('input[name="num"]').val();
+    		
+    		$.get('orderItem.action',{op:'add',gno:gno,orprice:orprice,num:num},function(data){
+    			console.log(data);
+    			if(1==data){
+    				alert("添加成功！");
+    				window.location.href='details.html?gno='+gno+'';
+    			}else{
+    				alert(error);
+    			}
+    			
+    		});
+    	}
+    	
+    	 function showgoodcart(){
+			 $.get("orderItem.action",{op:'find'},function(data){
+		     	if(data==2){
+		     		return  false;
+		     	}else{
+		     		$('.goods_count').html(data.length);
+		     	}
+		     },'json');
+		 }
+		 showgoodcart();
+
+    </script>
+</html>

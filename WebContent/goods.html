@@ -1,0 +1,267 @@
+<!DOCTYPE html >
+<html >
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>天天生鲜-商品列表</title>
+    <link href="images/1.jpg" rel="icon" type="images/x-icon" />
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/goods.css">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/check.js"></script>
+    <script type="text/javascript" src="js/goods.js"></script>
+</head>
+<body>
+	<!-- 头部  -->
+    <div class="header_con">
+		<div class="header">
+			<div class="welcome fl">欢迎来到天天生鲜!</div>
+			<div class="fr">
+				<div class="login_btn fl">
+					<a href="login.html"><span class="showLogin" id="showLogin"></span></a> <span id="exitspan" style="display: none"></span> 
+				</div>
+				
+				<div class="user_link fl"><span>|</span>
+					<a href="back/manager/user_info.jsp">用户中心</a><span>|</span>
+					<a href="back/manager/buyCar.html">我的购物车</a><span>|</span>
+					<a href="back/manager/order.html">我的订单</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 搜索框   clearfix(清除浮动) -->
+    <div class="search_bar clearfix">
+		<a href="index.html" class="logo fl"><img src="images/logo.png"></a>
+        
+		<div class="search_con fl">
+             <script>
+                $(function () {
+                    $('.input_btn').click(function () {
+                        q = $('.input_text').val();
+                        if(q==""){
+                        alert("请输入搜索内容");
+                        }
+                        else{
+                            location.href = index.html;
+                        }
+                    })
+                })
+
+            </script>
+			<input type="text" class="input_text fl" name="q" placeholder="搜索商品">
+			<input type="button" class="input_btn fr" name="" value="搜索">
+		</div>
+
+        
+            <div class="guest_cart fr">
+                <a href="buyCar.html" class="cart_name fl">我的购物车</a>
+                <div class="goods_count fl" id="show_count">2</div>
+            </div>
+        
+	</div>
+
+	<!-- 商品分类 -->
+    <div class="navbar_con">
+		<div class="navbar clearfix">
+			<div class="subnav_con fl">
+				<h1>全部商品分类</h1>
+				<span></span>
+                <ul class="subnav">
+                    <li><a href="goods.html" class="fruit">新鲜水果</a></li>
+                    <li><a href="#" class="seafood">海鲜水产</a></li>
+                    <li><a href="#" class="meet">猪牛羊肉</a></li>
+                    <li><a href="#" class="egg">禽类蛋品</a></li>
+                    <li><a href="#" class="vegetables">新鲜蔬菜</a></li>
+                    <li><a href="#" class="ice">速冻食品</a></li> 
+                </ul>              
+			</div>
+			<ul class="navlist fl">
+				<li><a href="index.html">首页</a></li>	
+                <li class="interval">|</li>
+                <li><a href="">手机生鲜</a></li>
+                <li class="interval">|</li>
+                <li><a href="">抽奖</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="breadcrumb" id="breadcrumb">
+		<a href="#">全部分类</a>
+		<span>&gt;</span>
+		<a href="#">新鲜水果</a>
+	</div>
+
+
+	<!-- 商品展示区域 -->
+	<div class="main_wrap clearfix">
+    	<!-- 新品推荐 -->
+		<div class="l_wrap fl clearfix">
+			<div class="new_goods">
+				<h3>新品推荐</h3>
+				<ul>
+                    <li>
+                        <a href="#"><img src="images/goods/goods003.jpg"></a>
+                        <h4><a href="#">牛奶草莓</a></h4>
+                        <div class="prize">￥12.00</div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/goods/goods009.jpg"></a>
+                        <h4><a href="#">来自海南的香蕉</a></h4>
+                        <div class="prize">￥89.00</div>
+                    </li>
+                    
+				</ul>
+			</div>
+		</div>
+		<!-- 商品列表 -->
+		<div class="r_wrap fr clearfix">
+			<div class="sort_bar">
+				<a href="javascript:void(0);" id="normal" class="type active">默认</a>
+				<a href="javascript:void(0);" id="price" class="type">价格</a>
+				<a href="javascript:void(0);" id="manUse" class="type">人气</a>
+			</div>
+
+			<ul class="goods_type_list clearfix  show1">
+                <li>
+					<a href="detail.html"><img src="images/goods/goods003.jpg"></a>
+					<h4><a href="detail.html">大兴大棚草莓</a></h4>
+					<div class="operate">
+						<span class="prize">￥16.80</span>
+						<span class="unit">16.80/500g</span>
+						<a href="#" class="add_goods" title="加入购物车"></a>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="images/goods/goods004.jpg"></a>
+					<h4><a href="#">吐鲁番梨光杏</a></h4>
+					<div class="operate">
+						<span class="prize">￥5.50</span>
+						<span class="unit">5.50/500g</span>
+						<a href="#" class="add_goods" title="加入购物车"></a>
+					</div>
+				</li>
+
+				<li>
+					<a href="#"><img src="images/goods/goods005.jpg"></a>
+					<h4><a href="#">黄肉桃</a></h4>
+					<div class="operate">
+						<span class="prize">￥10.00</span>
+						<span class="unit">10.00/500g</span>
+						<a href="#" class="add_goods" title="加入购物车"></a>
+					</div>
+				</li>
+
+				<li>
+					<a href="#"><img src="images/goods/goods006.jpg"></a>
+					<h4><a href="#">进口西梅</a></h4>
+					<div class="operate">
+						<span class="prize">￥28.80</span>
+						<span class="unit">28.80/500g</span>
+						<a href="#" class="add_goods" title="加入购物车"></a>
+					</div>
+				</li>
+
+				<li>
+					<a href="#"><img src="images/goods/goods007.jpg"></a>
+					<h4><a href="#">香梨</a></h4>
+					<div class="operate">
+						<span class="prize">￥6.45</span>
+						<span class="unit">6.45/500g</span>
+						<a href="#" class="add_goods" title="加入购物车"></a>
+					</div>
+                 </li>
+			</ul>
+
+			<!-- 分页栏 -->
+            <div class="pagenation">  
+                <ul>              
+                	<li><a href="#">上一页</a></li>
+                    <li><a href="#" class="active">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">下一页></a></li>
+                </ul> 
+			</div> 
+		</div>
+	</div>
+
+	<!-- 版权所有 -->
+    <div class="footer">
+    	<div class="foot_link">
+        	<a href="#">关于我们</a> <span> | </span>
+            <a href="#">联系我们</a> <span> | </span>
+            <a href="#">招聘广告</a> <span> | </span>
+            <a href="#">友情链接</a>
+        </div>
+    	<p>CopyRight &copy; 2019 衡阳市源辰信息科技有限公司 All Rights Reserverd</p>
+        <p>电话：0734-8355998 湘ICP备16015987号-1</p>
+    </div>
+    
+    <script type="text/javascript">
+		//分页
+	   var pageNo=1;
+	   var pageSize=4;
+	   var totalPage=0;
+	
+	   function findByPage(page){
+		$("#pagination li").removeClass("active");
+		if(arguments.length==0){
+			//说明没有给参数
+			$.post("../Fresh/jugement",{op:"findFirstByPage",pageNo:pageNo,pageSize:pageSize},function(data){
+				totalPage=Math.ceil(data.total/pageSize);
+				showPage();
+				showContent(data.rows);
+			},"json");
+		}else {
+			pageNo =page;
+			$.post("../Fresh/jugement",{op:"findByPage",pageNo:pageNo,pageSize:pageSize},function(data){
+		   $("#pagination li").eq(pageNo).addClass("active");
+		   showContent(data);
+			},"json");
+		}
+	   }
+	   function showPage() {
+		  var str='<li class="first-child"><a href="javascript:findByPage(1)">首页</a></li>';
+		  for(var i=1;i<=totalPage;i++){
+			  if(i == pageNo){
+			str +='<li class="active"><a href="javascript:findByPage('+ i +')">'+ i + '</a></li>';
+			  }else{
+				  str+= '<li><a href="javascript:findByPage('+i+')">' + i +'</a></li>';
+			  }
+		  } 
+		  str+= '<li><a href="javascript:findByPage('+totalPage+')">末页</a></li>';
+		  console.log(">>>>>>>>>>>"+str);
+			$("#pagenation").html("").append($(str));
+		 }
+	
+	/*    function showContent(data){
+			var strs='';
+			for(var i=0; i<data.length;i++){  
+			for (var j = 0; j < data[1][data[0][i]].length; j++) {
+			strs+='<ul class="goods_type_list clearfix">';
+			strs+=' <li>';
+			strs+='	<a href="#"><img src="'+ data[1][data[0][i]][j].photo +'"></a>';
+			strs+='	<h4><a href="#">'+data[1][data[0][i]][j].gtitle+'</a></h4>';
+			strs+='<div class="operate">';
+			strs+='	<span class="prize">￥'+ data[1][data[0][i]][j].gprice +'</span>';
+			strs+='	<span class="unit">500g</span>';
+			strs+='<a href="/cart/add18_1/" class="add_goods" title="加入购物车"></a>';
+			strs+='	</div>';
+			strs+='</li>';
+			strs+='<ul>'; 
+			  }
+		 }
+		$(".show1").html(str);      
+	   } */
+		 
+		 $(function (){
+			findByPage();
+		 })   
+  
+   
+	   </script>   
+</body>
+</html>

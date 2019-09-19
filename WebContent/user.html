@@ -1,0 +1,424 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>天天生鲜-用户中心</title>
+<style type="text/css">
+.order_icon #ono{
+width:300px;
+}
+
+</style>
+
+ <link rel="shortcut icon" href="images/logo.png">
+ <link rel="stylesheet" href="css/reset.css">
+ <link rel="stylesheet" href="css/main.css">
+ <link rel="stylesheet" href="css/user.css">
+</head>
+
+<body>
+	<!-- 头部  -->
+	<div class="header_con">
+    	<div class="header">
+    		<div class="welcome fl">欢迎来到天天生鲜</div>
+    		<div class="fr">
+            	<div class="login_info fl">
+                	欢迎：<em>y c</em>
+                </div>
+                <div class="login_btn fl">
+                	<a href="login.html">登录</a>
+                    <span> | </span>
+                    <a href="register.html">注册</a>
+                </div>
+            	 <div class="user_link fl">
+                    <span> | </span>
+                    <a href="user.html">用户中心</a>
+                    <span> | </span>
+                    <a href="cart-js.html">我的购物车</a>
+                    <span> | </span>
+                    <a href="order.html">我的订单</a>
+           		 </div> 
+             </div>  
+    	</div>
+    </div>
+    
+     <!-- 搜素框 -->
+     <div class="search_bar clearfix">
+        <a href="index.html" class="logo fl"><img src="images/logo.png"></a>
+        <div class="search_con fl">
+            <input type="text" placeholder="搜素商品" name="" class="input_text fl">
+            <input type="button" value="搜索" class="input_btn fr">
+        </div>
+        <div class="guest_cart fr">
+            <a href="cart-js.html" class="cart_name fl">我的购物车</a>
+            <div class="goods_count fl" id="show_count">0</div>
+        </div>
+     </div
+     
+    ><!-- 用户中心界面 -->
+    <div class="main_con clearfix">
+    
+    	<!-- 左侧用户菜单栏 -->
+		<div class="left_menu_con fl clearfix">
+			<h3>用户中心</h3>
+			<ul>
+				<li><a href="javascrit:void(0)" onclick="showinfo_con()" id="info"  >· 个人信息</a></li>
+				<li><a href="javascrit:void(0)" onclick="showorder_con()" id="order" >· 全部订单</a></li>
+				<li><a href="javascrit:void(0)" onclick="showaddr_con()" id="addr" >· 收货地址</a></li>
+			</ul>
+		</div>
+        
+        <!-- 右侧信息展示 -->
+        <div class="right_content fr clearfix">
+			<!-- 基本信息  -->
+            <div class="info_con clearfix ">
+                <h3 class="common_title2">基本信息</h3>
+                <ul class="user_info_list">
+                    <li>用户名称：<span>水木清华</span> </li>
+                    <li>联系方式：<span>15913290775</span></li>
+                    <li>联系地址：<span>湖南省衡阳市珠晖区南华大学8教</span></li>
+                </ul>
+            	<h3 class="common_title2">最近浏览</h3>
+                <div class="has_view_list">
+                    <ul class="goods_type_list clearfix">
+                        <li>
+                            <a href="detail.html"><img src="images/goods/goods003.jpg"></a>
+                            <h4><a href="detail.html">大兴大棚草莓</a></h4>
+                            <div class="operate">
+                                <span class="prize">￥16.80</span>
+                                <span class="unit">16.80/500g</span>
+                                <a href="#" class="add_goods" title="加入购物车"></a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/goods/goods004.jpg"></a>
+                            <h4><a href="#">吐鲁番梨光杏</a></h4>
+                            <div class="operate">
+                                <span class="prize">￥5.50</span>
+                                <span class="unit">5.50/500g</span>
+                                <a href="#" class="add_goods" title="加入购物车"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+           <!-- 查看订单 -->
+           <div class="order_icon active">
+        		<h3 class="common_title2">全部订单</h3>
+				<ul class="order_list_th w978 clearfix">
+					<li class="col01">2016-8-21 17:36:24</li>
+					<li class="col02"  id="ono">订单号：56872934</li>
+					<li class="col02 stress">未支付</li>		
+				</ul>
+
+				<table class="order_list_table w980">
+					<tbody>
+						<tr>
+							<td width="55%">
+								<ul class="order_goods_list clearfix">					
+									<li class="col01"><img src="images/goods02.jpg"></li>
+									<li class="col02">嘎啦苹果嘎啦苹果<em>11.80元/500g</em></li>	
+									<li class="col03">1</li>
+									<li class="col04">11.80元</li>	
+								</ul>
+								<ul class="order_goods_list clearfix">					
+									<li class="col01"><img src="images/goods02.jpg"></li>
+									<li class="col02">嘎啦苹果嘎啦苹果<em>11.80元/500g</em></li>	
+									<li class="col03">1</li>
+									<li class="col04">11.80元</li>	
+								</ul>
+							</td>
+							<td width="15%">33.60元</td>
+							<td width="15%">待付款</td>
+							<td width="15%"><a href="#" class="oper_btn">去付款</a></td>
+						</tr>
+					</tbody>
+				</table>
+			
+				<div class="pagenation">
+					<ul>
+                        <li><a href="#">上一页</a></li>
+                        <li><a href="#" class="active">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">下一页</a></li>
+					</ul>
+				</div>
+           </div>
+            
+            <!-- 收货地址 -->
+            <div class="site_con active">
+                <h3 class="common_titile2">收货地址</h3>
+                <div class="site_top" id="site_top">
+                    <dl>
+                        <dt>当前地址</dt>
+                        <dd>收件对象：<span></span></dd>
+                        <dd>收货地址：<span></span></dd>
+                        <dd>电话号码：<span></span></dd>
+                    </dl>
+                </div>
+                <div class="site_top" id="site_top01">
+                    <dl>
+                        <dt>当前地址</dt>
+                        <dd>收件对象：<span></span></dd>
+                        <dd>收货地址：<span></span></dd>
+                        <dd>电话号码：<span></span></dd>
+                    </dl>
+                </div>
+                <h3 class="common_title2">编辑地址</h3>
+                <div class="site_btm">
+                    <form>
+                        <div class="form_group">
+                            <label for="name">收件人：</label>
+                            <input type="text" name="name" id="name">
+                        </div>
+                        <div class="form_group">
+                            <label for="name">省：</label>
+                            <input type="text" name="province" id="province">
+                        </div>
+                        <div class="form_group">
+                            <label for="name">市：</label>
+                            <input type="text" name="city" id="city">
+                        </div>
+                        <div class="form_group">
+                            <label for="name">区：</label>
+                            <input type="text" name="area" id="area">
+                        </div>
+                        <div class="form_group ">
+                            <label for="addr">详细地址：</label>
+                            <input type="text" name="addr" id="addr">
+                        </div>
+                        <div class="form_group">
+                            <label for="tel">手机：</label>
+                            <input type="text" name="tel" id="tel">
+                        </div>
+                        <input type="button" name="" value="提交" class="info_submit"  >
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <!-- 版权所有 -->
+	<div class="footer">
+    	<div class="foot_link">
+    		<a href="#">关于我们</a> <span> | </span>
+            <a href="#">联系我么</a> <span> | </span>
+            <a href="#">招聘人才</a> <span> | </span>
+            <a href="#">友情链接</a> 
+    	</div>
+    	<p>CcpyRight &copy; 2019 衡阳市源辰信息科技有限公司 All Rights Reserverd</p>
+        <p>电话：0734-8355998 湘ICP备16015987号</p>
+    </div>
+    
+</body>
+
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" >
+    
+	//查看会员信息
+	$.get('member.action',{op:'showinfo'},function(data){
+		if(data==2){
+			window.location.href='login.html';
+		}
+		showinfo(data[0]);
+		
+	},'json');
+	function showinfo(arr){
+		var mno=arr.mno;
+		var str='<ul class="user_info_list">'
+    		+'<li>用户名称：<span>'+arr.nickname+'</span> </li>'
+    		+'<li>联系方式：<span>'+arr.tel+'</span></li>';
+    	$('.user_info_list').html(str);
+    	
+    	$.get('addr.action',{op:'find',mno:mno,status:1},function(data){
+    		//根据mno显示默认的用户地址
+    		showaddr(data);
+    		
+    	},'json');
+	}
+	
+	
+	$.get('addr.action',{op:'find',mno:1,status:2},function(data){
+		showaddr01(data);
+	},'json');
+
+	//显示用户地址
+	function showaddr01(arr){
+		str01 = '选择地址：<select  name="addr" id="select01" onchange="updateAddr()"><option value="1" >选择地址</option>';
+		for(var i=0; i<arr.length; i++){
+			str01+='<option value="'+arr[i].ano+'" >'+arr[i].province+arr[i].city+arr[i].area+arr[i].addr+'</option>';
+		}
+		str01+='</select>';
+		
+		var mno=arr[0].mno;
+		
+		$('#site_top01').html(str01);
+	}
+	function updateAddr(){
+		
+		var ano = $("#select01 option:selected").val();
+		var addr=$('#select01 option:selected').text();
+		$('#thisaddr').html('收货地址:'+addr);
+		
+		$.get('addr.action',{op:'find',status:1},function(data){
+			
+    		updatePre(data[0]);
+    	},'json');
+		$.get('addr.action',{op:'update',ano:ano,status:1},function(data){
+    		if(data==1){
+    			alert("其它地址改为默认地址");
+    		}
+    	},'json');
+		
+	}
+	
+	function showSelect(){
+		$.get('addr.action',{op:'find',status:2},function(data){
+    		console.log(data);
+    		//根据mno显示当前用户地址
+    		showaddr01(data);
+    	},'json');
+	}
+	
+	//把默认地址改为其它地址
+	function updatePre(arr){
+		var ano = arr.ano;
+		
+		$.get('addr.action',{op:'update',status:2,ano:ano},function(data){
+    		if(data==1){
+    			alert("默认地址改为其他地址");
+    		}
+    	},'json');
+	}
+	function showTopAddr(){
+
+    	$.get('addr.action',{op:'find',status:1},function(data){
+    		//根据mno显示默认的用户地址
+    		showaddr(data);
+    		
+    	},'json');
+	}
+	
+	//显示用户地址
+	function showaddr(arr){
+		var mno=arr[0].mno;
+		var str='<dl><dt>当前地址</dt><dd>收件对象：'+arr[0].name+'<span></span></dd>'
+		+'<dd  id="thisaddr">收货地址：'+arr[0].province+arr[0].city+arr[0].area+arr[0].addr+'<span></span></dd>'
+		+'<dd>电话号码：'+arr[0].tel+'<span></span></dd></dl>';
+		$('#site_top').html(str);
+		
+		$('.info_submit').click(function(){
+			//alert(mno);
+			var name=$('input[name="name"]').val();
+			var province=$('input[name="province"]').val();
+			var city=$('input[name="city"]').val();
+			var area=$('input[name="area"]').val();
+			var addr=$('input[name="addr"]').val();
+			var tel=$('input[name="tel"]').val();
+			$.post('addr.action',{op:'add',mno:mno,name:name,province:province,city:city,area:area,addr:addr,tel:tel},function(data){
+				
+				if(1==data){
+	    			alert("添加成功！");
+	    		}
+	    	});
+			
+		});
+	}
+	
+	//查看全部订单
+	$.get('order.action',{op:'findAll'},function(data){
+		console.log(data);
+		showOrder(data);//orderpo[0].odate
+	},'json');
+	function showOrder(arr){
+		//alert(arr[0].odate);
+		var str='<h3 class="common_title2">最近订单</h3>';
+		var status='';
+		for(var i=0; i<2; i++){
+			if(arr[i].status==1){
+				status='未支付';
+			}else{
+				status='已支付';
+			}
+			
+			str+='<ul class="order_list_th w978 clearfix">'
+				+'<li class="col01">'+arr[i].odate+'</li>'
+				+'<li class="col02"  id="ono">订单号：'+arr[i].ono+'</li>'
+				+'<li class="col02 stress">'+status+'</li></ul>'
+				+'</li></ul><table class="order_list_table w980" id="ono'+arr[i].ono+'"></table>';
+				
+		}
+		$('.order_icon').html(str);
+		for(var j=0;j<arr.length;j++){
+			showtable(arr[j].ono);
+		}
+	}	
+	
+	function showtable(ono){
+	$.get('orderItem.action',{op:'findTable',ono:ono},function(data){
+		console.log(data);
+		var str='';
+		var totalorprice=0;
+		for(var i=0;i<data.length;i++){
+			totalorprice+=data[i].orprice;
+		}
+		
+			str='<tbody><tr><td width="55%">';
+			
+				for(var j=0; j<data.length; j++){
+			str+='<ul class="order_goods_list clearfix">'
+			+'<li class="col01"><img src="'+data[j].pics+'"></li>'
+			+'<li class="col02">'+data[j].gname+'<em>'+data[j].price+'.00元/'+data[j].unit+'</em></li>'
+			+'<li class="col03">'+data[j].num+'</li><li class="col04">'+data[j].orprice+'.00元</li></ul>';
+			}
+			str+='</td><td width="15%">'+totalorprice+'.00元</td><td width="15%">待付款</td>'
+			+'<td width="15%"><a href="#" class="oper_btn">去付款</a></td></tr></tbody>';
+			
+		$('#ono'+ono+'').html(str);
+		
+	},'json');
+	
+	}
+	
+	    function showinfo_con(){
+			$('#info').addClass('active');
+			$('#order').removeClass('active');
+			$('#addr').removeClass('active');
+			$(".info_con").css('display','block');
+			$(".order_icon").css('display','none');
+			$(".site_con").css('display','none');
+		}
+	    function showorder_con(){
+    		$('#order').addClass('active');
+    		$('#info').removeClass('active');
+    		$('#addr').removeClass('active');
+    		$(".info_con").css('display','none');
+    		$(".order_icon").css('display','block');
+    		$(".site_con").css('display','none');
+    	}
+	    function showaddr_con(){
+			$('#addr').addClass('active');
+			$('#info').removeClass('active');
+			$('#order').removeClass('active');
+			$(".info_con").css('display','none');
+			$(".order_icon").css('display','none');
+			$(".site_con").css('display','block');
+		}
+
+	    function showgoodcart(){
+			 $.get("orderItem.action",{op:'find'},function(data){
+		     	if(data==2){
+		     		return  false;
+		     	}else{
+		     		$('.goods_count').html(data.length);
+		     	}
+		     },'json');
+		 }
+		 showgoodcart();
+
+    </script>
+
+</html>

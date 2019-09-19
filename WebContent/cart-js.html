@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>天天生鲜-购物车</title>
+<link rel="shortcut icon" href="images/logo.png">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/cart.css">
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+	<!-- 头部 -->
+	<div class="header_con">
+    	<div class="header">
+    		<div class="welcome fl">欢迎来到天天生鲜</div>
+            <div class="fr">
+            	<div class="login_info fl">
+                	欢迎：<em>y c</em>
+                </div>
+            	<div class="login_btn fl">
+                	<a href="login.html">登录</a>
+                    <span>|</span>
+                    <a href="register.html">注册</a>
+                </div>
+                <div class="user_link fl">
+                 	<span>|</span>
+                	<a href="user.html">用户中心</a>
+                    <span>|</span>
+                    <a href="#">我的购物车</a>
+                    <span>|</span>
+                    <a href="order.html">我的订单</a>
+                </div>
+            </div>
+    	</div>
+    </div>
+
+	<!-- 搜索框-->
+	<div class="search_bar clearfix">
+    	<a href="index.html" class="logo fl"><img src="images/logo.png"></a>
+    	<div class="search_con fl">
+        	<form>
+            	<input type="text" placeholder="搜索商品" class="input_text fl" name="key_words">
+                <input type="button" value="搜索" class="input_btn fr">
+            </form>
+        </div>
+    	<div class="guest_cart fr">
+        	<a href="" class="cart_name fl">我的购物车</a>
+            <div class="goods_count fl" id="show_count">1</div>
+        </div>
+    </div>
+    
+    <!-- 购物车 -->
+    <div class="cart_con">
+    	<h2 class="total_count">全部商品<em>1</em>件</h2>
+    	<div class="cart_list_th clearfix">
+        	<ul>
+            	<li class="col01">商品名称</li>
+            	<li class="col02">商品单位</li>
+                <li class="col03">商品价格(元)</li>
+                <li class="col04">数量</li>
+                <li class="col05">小计</li>
+                <li class="col06">操作</li>
+            </ul>
+        </div>
+    	<div class="cart_list_td clearfix">
+       		
+           
+        </div>
+    	<div class="setelements">
+        	<ul>
+            	<li class="col01"><input type="checkbox" checked id="all"></li>
+            	<li class="col02"><label for="all">全选</label></li>
+                <li class="col03">合计(不含运费)：<span>￥</span><em id="totalPrices">
+                </em><br>共计<b id="totalNumbers"></b>件商品</li>
+                <li class="col04"><a href="javascript:submit()">去结算</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 版权所有 -->
+	<div class="footer">
+    	<div class="foot_link">
+    		<a href="#">关于我们</a> <span> | </span>
+            <a href="#">联系我么</a> <span> | </span>
+            <a href="#">招聘人才</a> <span> | </span>
+            <a href="#">友情链接</a> 
+    	</div>
+    	<p>CcpyRight &copy; 2019 衡阳市源辰信息科技有限公司 All Rights Reserverd</p>
+        <p>电话：0734-8355998 湘ICP备16015987号</p>
+    </div>
+    
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/car.js"></script>
+    <script>
+    	function showAll(){
+    	$.get('orderItem.action',{op:'find'},function(data){
+    		if(data==2){
+    			window.location.href='login.html';
+    		}else{
+    			console.log(data);
+    			showCart(data);
+    			showFoot(data);
+    		}
+    	},'json');
+    }
+    	showAll();
+    	
+    function showCart(arr){
+    	var str='';
+    	str='<h2 class="total_count">全部商品<em>'+arr.length+'</em>件</h2>'
+    	$('h2').html(str);
+    	var str1 = '';
+    	for(var i=0;i<arr.length;i++){
+    		str1+='<ul><li class="col01"><input type="checkbox" name="oino" value="'+arr[i].oino+'" checked>'
+               	+'</li><li class="col02"><img src="'+arr[i].pics+'"></li><li class="col03">'+arr[i].gname+'<br>'
+                +'<em>'+arr[i].price+'元/'+arr[i].unit+'</em></li><li class="col04">500g</li>'
+                +'<li class="col05">'+arr[i].price+'</li><li class="col06"><div class="num_add"> '
+                +'<a href="javascript:reducenum('+arr[i].oino+','+arr[i].price+')" onclick="lost(this,'+arr[i].oino+')"'
+                +'class="minus fl">-</a><input type="text" name="num'+arr[i].oino+'" value="'+arr[i].num+'" class="num_show fl">'
+                +'<a href="javascript:addnum('+arr[i].oino+','+arr[i].price+')" onclick="add(this)" class="add fl">+</a>'    	
+                +'</div></li><li class="col07">'+arr[i].orprice+'</li><li class="col08">'        
+                +'<a href="javascript:updateorder('+arr[i].oino+');" onclick="delGoods(this)">删除</a></li></ul>' 
+                +'<input type="hidden" name="oino1" value="'+arr[i].oino+'" />';    
+    		}
+    		$('.cart_list_td').html(str1);
+    	}
+    function addorder(arr){
+    	for(var i=0;i<arr.length;i++){
+    	}
+    }
+    function updateorder(oino){
+    	$.post('orderItem.action',{op:'updateOrder',oino:oino},function(data){
+    		if(data==1){
+    			alert('删除成功');
+    		}else{
+    			alert('删除失败');
+    		}
+    	});
+    }
+    function reducenum(oino,price){
+    	$.post('orderItem.action',{op:'reducenum',oino:oino,orprice:price},function(data){
+    		if(1==data){
+    		}else{
+    			alert("失败");
+    		}
+    	});
+    }
+    
+    function  addnum(oino,price){
+    	$.post('orderItem.action',{op:'addnum',oino:oino,price:price},function(data){
+    		if(1==data){
+    		}else{
+    			alert("失败");
+    		}
+    	});
+    }
+    function lost(obj,oino){
+    	var num=$('input[name="num'+oino+'"]').val();
+    	console.log(num);
+    	if(num==1){
+    		updateorder(oino);//sha
+    		showAll();
+    		return  false;
+    	}
+    	//获取购物车中点击的商品数量
+    	var num = $(obj).next().val();
+    	//判断此商品的数量是否大于1
+    	if( num <= 1){
+    		return; 
+    	}
+    	num--;
+    	//数量写入标签中
+    	$(obj).next().val(num);	
+    	//获取单价
+    	var price = $(obj).parent().parent().prev().html();
+    	//获取小计
+    	var total = num*price*1.00;
+    	//获取小计标签
+    	var $subtotal = $(obj).parent().parent().next();
+    	//小计价钱写入标签中
+    	total = returnFloat(total);
+    	$subtotal.text(total);
+    	
+    	productCount();
+    }
+    function  showFoot(arr){
+    	var total=0;
+    	for(var i=0;i<arr.length;i++){
+    		total+=arr[i].orprice;
+    	}
+    	
+    	$('.setelements .col03').find('em').html(total);
+    	$('.setelements .col03').find('b').html(arr.length);
+    	
+    }
+     function submit(){
+    	 var obj=document.getElementsByName("oino");
+    	for(var i=0;i<obj.length;i++){
+    		
+    		if(!obj[i].checked){
+    			 var oino=obj[i].value;
+    			 updateorder(oino);
+    		}
+    	} 
+   	 window.location.href='order.html';
+     }
+    
+     function showgoodcart(){
+		 $.get("orderItem.action",{op:'find'},function(data){
+	     	if(data==2){
+	     		return  false;
+	     	}else{
+	     		$('.goods_count').html(data.length);
+	     	}
+	     },'json');
+	 }
+	 showgoodcart();
+    	
+	 
+	 
+    </script>
+</body>
+</html>
